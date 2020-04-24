@@ -14,7 +14,7 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "pacific-anchorage-99608" #Must be unique in Heroku
-          heroku_email: "jlhacba@gmail.com"
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
           buildpack: "SOME BUILDPACK" #OPTIONAL
           branch: "master" #OPTIONAL and DEFAULT - 'HEAD' (a.k.a your current branch)
           dontuseforce: false #OPTIONAL and DEFAULT - false
