@@ -2,22 +2,22 @@ name: Deploy
 
 on:
   push:
-    branches: [master]
-  pull_request:
-    branches: [master]
+    branches:
+      - master
 
 jobs:
-
-  deploy:
-      name: Deploy
-      runs-on: ubuntu-latest
-
-      steps: 
-        - name: Checkout
-          uses: actions/checkout@v1
-
-        - name: Add remote origin
-          run: git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
-
-        - name: Deploy backend to heroku
-          run: git push --force heroku `git subtree split --prefix server HEAD`:master
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: akhileshns/heroku-deploy@v3.0.4 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "pacific-anchorage-99608" #Must be unique in Heroku
+          heroku_email: "jlhacba@gmail.com"
+          buildpack: "SOME BUILDPACK" #OPTIONAL
+          branch: "YOUR_BRANCH" #OPTIONAL and DEFAULT - 'HEAD' (a.k.a your current branch)
+          dontuseforce: false #OPTIONAL and DEFAULT - false
+          usedocker: false #OPTIONAL and DEFAULT - false
+          appdir: "" #OPTIONAL and DEFAULT - "". This is useful if the api you're deploying is in a subfolder
+          docker_heroku_process_type: "" #OPTIONAL and DEFAULT - "web"
