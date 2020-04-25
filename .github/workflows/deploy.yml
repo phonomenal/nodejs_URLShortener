@@ -5,7 +5,8 @@ on:
     branches:
       - master
     paths-ignore:
-      - README.md
+      - README.md                       #Ignore changes to the README.md file from triggering the workflow
+      - .github/workflows/deploy.yml    #Ignore changes to this file from triggering the workflow
 
 jobs:
   build:
