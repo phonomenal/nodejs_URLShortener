@@ -1,4 +1,6 @@
 # Intro App
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/5e19eb2b-821f-45a2-8175-0689d5b0fce5.svg?orgId=650162616495)](https://app.soluble.cloud/repos/details/github.com/james-leha/nodejs_urlshortener?orgId=650162616495)  
 Simple NodeJS App that will shorten an inputted URL
 
 ## Actions
