@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mocha": "^7.1.1",
+    "mocha": "^10.2.0",
     "node-url-shortener": "^1.0.1"
   }
 }
